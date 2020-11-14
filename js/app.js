@@ -1,4 +1,24 @@
 /*-------------------------------- Constants --------------------------------*/
+// Players 1 and 2, and the board need to be defined, as well as the winning combininations. These will remain constant through all games and therefore will not change
+
+// const gameInfoAboutBoard = { // Sets constants of my board to show that one player will be red and the other green. On spaces where no player has used the color will be white or empty and availible. 
+//     '1': 'green';
+//     '-1': 'red';
+//     'null': 'white'
+// }
+
+
+const winningCombos = [ // Array of winning combinations 
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [6, 4, 2]
+];
+console.log(winningCombos)
 
 
 
