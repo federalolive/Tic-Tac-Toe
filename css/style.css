@@ -1,28 +1,50 @@
-/* Using universal to insure border-box is always applied  */
-*, *::after, *::before { 
+  
+*, *::after, *::before {
     box-sizing: border-box;
-    justify-content: center;
+}
+
+:root {
+    --sq-size: 100px;  
 }
 
 body {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+    margin: 0;
+}
+
+#board {
+    width: 150vw;
+    height: 150vh;
+    display: grid;
     justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(3, auto);
+    justify-items: center;
+    align-items: center;
+}
+
+.sq {
+    width: var(--sq-size);  /* Used varaibles */
+    height: var(--sq-size);
+    border: 2px solid black
+}
+
+/* REMOVING BORDER TO GIVE BOARD THE STANDARD TIC-TAC-TOE # shape */
+/* Targets sq's 0, 1, 2 and removes the top border */
+.sq:nth-child(-n+3) {
     border-top: none;
 }
 
-.board {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-
+/* Targets sq's 6, 7, 8 and removes the bottum border */
+.sq:nth-child(n+7) {
+    border-bottom: none;
 }
 
-div {
-    border: 3px solid black;
-    font-size: 8vmin;
-    text-align: center;
-    vertical-align: middle;
+/* Targets sq's 2, 5, 8 and removes the right side border */
+.sq:nth-child(3n+3) {
+    border-right: none;
+}
+
+/* Targets sq's 0, 3, 7 and removes the left border */
+.sq:nth-child(3n+1) {
+    border-left: none;
 }
