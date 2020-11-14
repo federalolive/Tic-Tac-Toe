@@ -1,11 +1,13 @@
 /*-------------------------------- Constants --------------------------------*/
 // Players 1 and 2, and the board need to be defined, as well as the winning combininations. These will remain constant through all games and therefore will not change
 
-// const gameInfoAboutBoard = { // Sets constants of my board to show that one player will be red and the other green. On spaces where no player has used the color will be white or empty and availible. 
-//     '1': 'green';
-//     '-1': 'red';
-//     'null': 'white'
-// }
+//  Sets constants of my board to show that one player will be red and the other green. On spaces where no player has used the color will be white or empty and availible. const game
+
+ const InfoAboutBoard = {
+    '1': 'green',
+    '-1': 'red',
+    'null': 'white'
+};
 
 
 const winningCombos = [ // Array of winning combinations 
@@ -18,13 +20,12 @@ const winningCombos = [ // Array of winning combinations
     [0, 4, 8],
     [6, 4, 2]
 ];
-console.log(winningCombos)
 
 
 
 /*---------------------------- Variables (state) ----------------------------*/
-
-// Variables might include (board/turn/winner)
+// Defines the variables of the game
+let board, turn, winner;
 
 /*------------------------ Cached Element References ------------------------*/
 

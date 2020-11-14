@@ -67,9 +67,9 @@ Now we can start adding as many detailed steps as desired.
 
 Typically, pseudocode does not have to be as detailed as the following - it is highly detailed here to help you as much as possible:
 
-1) Define the required constants:
+<!-- 1) Define the required constants:
 	1.1) Define a colors object with keys of 'null' (when the square is empty) and players 1 & -1. The value assigned to each key represents the color to display for an empty square (null), player 1, and player -1.
-	1.2) Define the 8 possible winning combinations, each containing three indexes of the board that make a winner if they hold the same player value.
+	1.2) Define the 8 possible winning combinations, each containing three indexes of the board that make a winner if they hold the same player value. -->
 
 2) Define the required variables used to track the state of the game:
 	2.1) Use a board array to represent the squares.	

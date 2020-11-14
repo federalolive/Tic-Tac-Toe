@@ -1,12 +1,15 @@
 /* Using universal to insure border-box is always applied  */
 *, *::after, *::before { 
     box-sizing: border-box;
+    justify-content: center;
 }
 
 body {
     height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    border-top: none;
 }
 
 section.board {
