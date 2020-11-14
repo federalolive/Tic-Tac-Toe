@@ -1,6 +1,4 @@
 /*-------------------------------- Constants --------------------------------*/
-// Players 1 and 2, and the board need to be defined, as well as the winning combininations. These will remain constant through all games and therefore will not change
-
 //  Sets constants of my board to show that one player will be red and the other green. On spaces where no player has used the color will be white or empty and availible. const game
 
  const InfoAboutBoard = {
@@ -26,6 +24,9 @@ const winningCombos = [ // Array of winning combinations
 /*---------------------------- Variables (state) ----------------------------*/
 // Defines the variables of the game
 let board, turn, winner;
+
+board = ['', '', '', '', '', '', '', '', ''];
+
 
 /*------------------------ Cached Element References ------------------------*/
 
