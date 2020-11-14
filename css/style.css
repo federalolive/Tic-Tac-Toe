@@ -3,17 +3,25 @@
     box-sizing: border-box;
 }
 
+/* I wanted to play around with Variables so as to get a better understanding of them */
 :root {
-    --sq-size: 100px;  
+    --sq-size: 125px;  
 }
 
 body {
     margin: 0;
+
+}
+
+h1 {
+   text-align: center;
+    margin-top: 20px;
+    margin-bottom: 120px;
 }
 
 #board {
-    width: 150vw;
-    height: 150vh;
+    width: auto;
+    height: 50vh;
     display: grid;
     justify-content: center;
     align-content: center;
@@ -23,7 +31,7 @@ body {
 }
 
 .sq {
-    width: var(--sq-size);  /* Used varaibles */
+    width: var(--sq-size);  
     height: var(--sq-size);
     border: 2px solid black
 }
