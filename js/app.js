@@ -35,12 +35,25 @@ const spaces = document.querySelectorAll('sq');
 const messege = document.querySelectorAll('h1')
 
 /*----------------------------- Event Listeners -----------------------------*/
-
 // This is where you should put the event listener
 // for a mouse-click
 
-/*-------------------------------- Functions --------------------------------*/
+document.querySelector('board').addEventListener('click'), 'makeMove';
 
+/*-------------------------------- Functions --------------------------------*/
+initialize();
+
+// need makeMove function
+
+
+// Winning Logic - sets up logic using the array winningCombos and a ternary isindie the function to test if a player has won.
+function getWinner() {
+    let winner = null; 
+    winningCombos.forEach(function(combo, index) {
+        if (board[combo[0]] && board[combo[0]] === board[combo[1]] && board[combo[0]] === board[combo[2]]) = board[combo[0]];
+    });
+    return winner ? winner : board.includes('') ? null : 'T';
+    }
 
 // Some functions you might choose to use:
 
