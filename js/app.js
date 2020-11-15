@@ -39,40 +39,46 @@ const messege = document.querySelectorAll('h1')
 // for a mouse-click
 
 document.querySelector('board').addEventListener('click'), 'makeMove';
+const messages = document.querySelector('h2');
+document.getElementById('reset-button').addEventListener('click', init);
 
 /*-------------------------------- Functions --------------------------------*/
-initialize();
-
+// Setting up the board
+function init() {
+    board = [
+        '', '', '',
+        '', '', '',
+        '', '', '',
+    ];
+        render(); 
+};
 // need makeMove function
-
+function handleTurn() {
+    let idx = squares.findIndex(function(square) {
+        return square === event.target;
+    });
+    board[idx] = turn;
+    turn = turn === 'X' ? 'O' : 'X';
+    win = getWinner();
+    render();
+};
 
 // Winning Logic - sets up logic using the array winningCombos and a ternary isindie the function to test if a player has won.
 function getWinner() {
     let winner = null; 
     winningCombos.forEach(function(combo, index) {
-        if (board[combo[0]] && board[combo[0]] === board[combo[1]] && board[combo[0]] === board[combo[2]]) = board[combo[0]];
+        if (board[combo[0]] && board[combo[0]] === board[combo[1]] && board[combo[0]] === board[combo[2]]) === board[combo[0]];
     });
     return winner ? winner : board.includes('') ? null : 'T';
-    }
+};
 
-// Some functions you might choose to use:
-
-// Initialization function:
-// Where you set your initial state, setting up 
-// what the board will look like upon loading
-
-// On-Click function:
-// Set up what happens when one of the elements
-// is clicked
+function render() {
+    board.forEach(function(mark, index) {
+        sqaures[index].textContent = mark;
+    });
+    messages.textContent = win === 'T' ? `It's a Tie!` : win ? `${winner} wins the game!` : `It's ${turn}`'s turn!`;
+};
 
 
-// Check winner function:
-// Checks the current state of the board for
-// a winner and changes the state of the winner
-// variable if so
 
-
-// Render function:
-// Displays the current state of the board
-// on the page, updating the elements to reflect
-// either X or O depending on whose turn it is
+init();
