@@ -21,31 +21,21 @@ let board = ['', '', '', '', '', '', '', '', ''];
 // Establishes element references to spaces and messege
 
 const squares = document.querySelectorAll('#board div');
-const messages = document.querySelector('#messege');
+const messages = document.querySelector('.messeges');
 
 /*----------------------------- Event Listeners -----------------------------*/
 // This is where you should put the event listener
 // for a mouse-click
 
-document.querySelector('board').addEventListener('click'), 'makeMove';
-const messages = document.querySelector('h2');
-document.getElementById('reset-button').addEventListener('click', init);
+document.getElementById('board').addEventListener('click', makeMove);
+document.querySelector('.restartButton').addEventListener('click', init);
 
 /*-------------------------------- Functions --------------------------------*/
-// Setting up the board
-function init() {
-    board = [
-        '', '', '',
-        '', '', '',
-        '', '', '',
-    ];
-        render(); 
-};
+
 // need makeMove function
-function handleTurn() {
-    let idx = squares.findIndex(function(square) {
-        return square === event.target;
-    });
+function makeMove(e) {
+    let idx = parseInt(e.target.id.replace('sq', '')); 
+        if (board[idx] || winner) return;
     board[idx] = turn;
     turn = turn === 'X' ? 'O' : 'X';
     win = getWinner();
@@ -63,17 +53,21 @@ function getWinner() {
 
 function render() {
     board.forEach(function(mark, index) {
-        sqaures[index].textContent = mark;
+        squares[index].textContent = mark;
     });
     if (winner === 'T') {
-        messege.innerHTML = "It's a tie!";
+        messages.innerHTML = "It's a tie!";
     } else if (winner) {
-        messege.innerHTML = `${winner} Wins!!`;
+        messeges.innerHTML = `${winner} Wins!!`;
     } else {
-        messege.innerHTML = `It's ${turn}'s turn`;
+        messeges.innerHTML = `It's ${turn}'s turn`;
         }
     }
 
+function init() {
+    let board = ['', '', '', '', '', '', '', '', ''];
+    winner = null;
+    render();
+};
 
-
-function init() {} 
+init();
