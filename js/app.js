@@ -29,8 +29,10 @@ board = ['', '', '', '', '', '', '', '', ''];
 
 
 /*------------------------ Cached Element References ------------------------*/
+// Establishes element references to spaces and messege
 
-// You might choose to put your game status here
+const spaces = document.querySelectorAll('sq');
+const messege = document.querySelectorAll('h1')
 
 /*----------------------------- Event Listeners -----------------------------*/
 
