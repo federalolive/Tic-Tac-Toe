@@ -1,9 +1,5 @@
 /*-------------------------------- Constants --------------------------------*/
-//  
-
-
-
-
+//  These winning variables do not change
 const winningCombos = [ // Array of winning combinations 
     [0, 1, 2],
     [3, 4, 5],
@@ -14,21 +10,18 @@ const winningCombos = [ // Array of winning combinations
     [0, 4, 8],
     [6, 4, 2]
 ];
-
-
-
 /*---------------------------- Variables (state) ----------------------------*/
 // Defines the variables of the game
-let board, turn, winner;
-
-board = ['', '', '', '', '', '', '', '', ''];
+let turn = 'X';
+let winner;
+let board = ['', '', '', '', '', '', '', '', ''];
 
 
 /*------------------------ Cached Element References ------------------------*/
 // Establishes element references to spaces and messege
 
-const spaces = document.querySelectorAll('sq');
-const messege = document.querySelectorAll('h1')
+const squares = document.querySelectorAll('#board div');
+const messages = document.querySelector('#messege');
 
 /*----------------------------- Event Listeners -----------------------------*/
 // This is where you should put the event listener
