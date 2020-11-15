@@ -67,7 +67,7 @@ function handleTurn() {
 function getWinner() {
     let winner = null; 
     winningCombos.forEach(function(combo, index) {
-        if (board[combo[0]] && board[combo[0]] === board[combo[1]] && board[combo[0]] === board[combo[2]]) === board[combo[0]];
+        if (board[combo[0]] && board[combo[0]] === board[combo[1]] && board[combo[0]] === board[combo[2]]) winner = board[combo[0]];
     });
     return winner ? winner : board.includes('') ? null : 'T';
 };
@@ -76,8 +76,14 @@ function render() {
     board.forEach(function(mark, index) {
         sqaures[index].textContent = mark;
     });
-    messages.textContent = win === 'T' ? `It's a Tie!` : win ? `${winner} wins the game!` : `It's ${turn}`'s turn!`;
-};
+    if (winner === 'T') {
+        messege.innerHTML = "It's a tie!";
+    } else if (winner) {
+        messege.innerHTML = `${winner} Wins!!`;
+    } else {
+        messege.innerHTML = `It's ${turn}'s turn`;
+        }
+    }
 
 
 
