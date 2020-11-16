@@ -54,7 +54,7 @@ function getWinner() {
 
 function render() {
     board.forEach(function(sq, idx) {
-      squares[idx].style.background = lookup[sq];
+      squares[idx].textContent = board[sq];
     });
     if (winner === 'T') {
       message.innerHTML = 'Rats, another tie!';
@@ -73,4 +73,4 @@ function init() {
 
 init();
 
-// Spent many hours trying to fix this game. Need to eat food and do other homework that is due tomorrow. I will be returning to this shit show of a game and kicking it's ass like it tried to steal my lunch money by completing it!
+// Spent way too many hours trying to fix this game, I have the logic all there, but I cannot seem to make the game function in the browser. I will definetly be returning and finishing this game, but as it stands I am looking more forward to our project than tic-tac-toe.
