@@ -12,6 +12,7 @@ const winningCombos = [ // Array of winning combinations
 ];
 /*---------------------------- Variables (state) ----------------------------*/
 // Defines the variables of the game
+
 let turn = 'X';
 let winner;
 let board = ['', '', '', '', '', '', '', '', ''];
@@ -20,7 +21,7 @@ let board = ['', '', '', '', '', '', '', '', ''];
 /*------------------------ Cached Element References ------------------------*/
 // Establishes element references to spaces and messege
 
-const squares = document.querySelectorAll('#board div');
+const squares = document.querySelectorAll('[square]');
 const messages = document.querySelector('.messeges');
 
 /*----------------------------- Event Listeners -----------------------------*/
@@ -52,17 +53,17 @@ function getWinner() {
 };
 
 function render() {
-    board.forEach(function(mark, index) {
-        squares[index].textContent = mark;
+    board.forEach(function(sq, idx) {
+      squares[idx].style.background = lookup[sq];
     });
     if (winner === 'T') {
-        messages.innerHTML = "It's a tie!";
+      message.innerHTML = 'Rats, another tie!';
     } else if (winner) {
-        messeges.innerHTML = `${winner} Wins!!`;
+      message.innerHTML = `Congrats ${[winner].toUpperCase()}!`;
     } else {
-        messeges.innerHTML = `It's ${turn}'s turn`;
-        }
+      message.innerHTML = `${winner[turn].toUpperCase()}'s Turn`;
     }
+  }
 
 function init() {
     let board = ['', '', '', '', '', '', '', '', ''];
@@ -71,3 +72,5 @@ function init() {
 };
 
 init();
+
+// Spent many hours trying to fix this game. Need to eat food and do other homework that is due tomorrow. I will be returning to this shit show of a game and kicking it's ass like it tried to steal my lunch money by completing it!
